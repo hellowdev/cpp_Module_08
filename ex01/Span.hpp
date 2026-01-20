@@ -24,9 +24,8 @@ class Span
                 throw std::out_of_range("range bigger");
             std::vector<int>::iterator pos = myVector.begin() + myVector.size();
             myVector.insert(pos, contain.begin(), contain.end());
-            
         }
-        void printvalue();
+        // void printvalue();
         ~Span();
 };
 

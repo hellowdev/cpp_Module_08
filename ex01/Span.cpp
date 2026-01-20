@@ -21,7 +21,7 @@ Span& Span::operator=(const Span& original)
 
 void Span::addNumber(int nb)
 {
-    if (myVector.size()  == myVector.capacity())
+    if (myVector.size() == myVector.capacity())
         throw std::out_of_range("your array is full");
     myVector.push_back(nb);
 }
@@ -32,7 +32,7 @@ int Span::longestSpan()
         throw std::out_of_range("longest not found");
     std::vector<int>::iterator max = std::max_element(myVector.begin(), myVector.end());
     std::vector<int>::iterator min = std::min_element(myVector.begin(), myVector.end());
-    
+
     return *max - *min;
 }
 
@@ -57,24 +57,15 @@ int Span::shortestSpan()
     return lowest;
 }
 
-// void Span::fillRange(std::vector<int> &vec)
+// void Span::printvalue()
 // {
-//     unsigned int emptySpace = myVector.capacity() - myVector.size();
-//     if (emptySpace < vec.size())
-//         throw std::out_of_range("range bigger");
-//     std::vector<int>::iterator pos = myVector.begin() + myVector.size();
-//     myVector.insert(pos, vec.begin(), vec.end());
+//     unsigned int i = 0;
     
+//     while (i < myVector.capacity())
+//     {
+//         std::cout << myVector[i] << '\n';
+//         i++;
+//     }
 // }
-
-void Span::printvalue()
-{
-    unsigned int i = 0;
-    while (i < myVector.capacity())
-    {
-        std::cout << myVector[i] << '\n';
-        i++;
-    }
-}
 
 Span::~Span(){}
