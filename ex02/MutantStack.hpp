@@ -6,38 +6,24 @@
 template <typename TYPE>
 class MutantStack : public std::stack<TYPE>
 {
-    private:
-        std::stack<TYPE> container;
-        // MutantStack::iterator it;
-        // typename std::deque<TYPE>::iterator it;
-        // TYPE *beg;
-        // TYPE *en;
     public:
+        typedef typename std::stack<TYPE>::container_type::iterator iterator;
         MutantStack(){};
-        // MutantStack(const MutantStack& original)
-        // {
-        //     container = original.container;
-        // };
-        // MutantStack& operator=(const MutantStack& original)
-        // {
-        //     container = original.container;
-        //     return (*this);
-        MutantStack::iterator<TYPE> begin()
+        MutantStack(const MutantStack& original) : std::stack<TYPE>(original)
+        {};
+        MutantStack& operator=(const MutantStack& original)
         {
-            container.front();
-            // return it.begin();
-
+            // this->c = original.c;
+            std::stack<TYPE>::operator=(original);
+            return (*this);
         }
-        class iterator : public std::deque<TYPE>, public std::deque<TYPE>::iterator
+        iterator begin()
         {
-            private:
-                TYPE *ptr;
-            public:
-                iterator(){};
-                ~iterator(){};
-                
-            
-        };
+            return this->c.begin();
+        }
+        iterator end()
+        {
+            return this->c.end();
+        }
         ~MutantStack(){};
-
 };
