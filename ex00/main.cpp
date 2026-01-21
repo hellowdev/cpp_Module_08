@@ -1,16 +1,15 @@
 #include "easyfind.hpp"
-#include <algorithm>
-#include <array>
+
 
 int main()
 {
-    std::array<int, 15>myarray;
+    std::array<int, 15> myarray;
     
     for (size_t i = 0; i < 15; i++)
     {
         myarray[i] = 100;
     }
-    myarray[9] = 3;
+    myarray[10] = 3;
     try
     {
        std::cout << ::easyfind(myarray, 3) << '\n';
@@ -27,6 +26,4 @@ int main()
     {
         std::cerr << e.what() << '\n';
     }
-    
-
 }

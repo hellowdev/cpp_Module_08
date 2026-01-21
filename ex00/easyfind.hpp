@@ -1,4 +1,6 @@
 #include <iostream>
+#include <algorithm>
+#include <array>
 
 template <typename T>
 int easyfind(T type, int x)
